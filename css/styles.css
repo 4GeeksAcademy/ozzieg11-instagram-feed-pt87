@@ -39,16 +39,22 @@ div.feed:not(.grid-view) div.card img {
   max-width: none;
 }
 
-div.feed:not(.grid-view) div.card .card-header {
+div.feed:not(.grid-view) div.card div.card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
 }
 
-div.feed:not(.grid-view) div.card .card-body {
-  padding: 0.5rem 1rem;
-  text-align: left;
+div.feed:not(.grid-view) div.card div.card-body {
+  padding: 0.5rem 1rem 1.5rem 1rem;
+}
+
+div.feed:not(.grid-view) div.card div.card-text {
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: inherit;
 }
 
 div.feed.grid-view {
