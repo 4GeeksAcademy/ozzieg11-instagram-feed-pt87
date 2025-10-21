@@ -1,21 +1,94 @@
 div.feed {
-  max-width: 600px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  height: 90vh;
   scroll-behavior: smooth;
+  padding: 0 8px;
 }
 
-div.feed div.card img {
+div.feed div.card {
+  margin: 0 0 1rem 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  line-height: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] div.feed div.card {
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+div.feed:not(.grid-view) div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+div.feed:not(.grid-view) div.card img {
   width: 100%;
   height: auto;
-  border-radius: 0;
   object-fit: cover;
+  display: block;
+  border-radius: 0;
+  margin: 0;
+  max-width: none;
 }
 
-div.feed div.card-body {
+div.feed:not(.grid-view) div.card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.75rem 1rem;
 }
 
-div.card-header {
-  background-color: transparent;
+div.feed:not(.grid-view) div.card .card-body {
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+div.feed.grid-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+}
+
+div.feed.grid-view div.card {
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+div.feed.grid-view div.card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+}
+
+div.feed.grid-view div.card div.card-header,
+div.feed.grid-view div.card div.card-body {
+  display: none;
+}
+
+div.nav div.btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border-radius: 50%;
+}
+div.nav div.btn.active {
+  background-color: #0d6efd;
+  color: white;
 }
