@@ -1,0 +1,21 @@
+div.feed {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 90vh;
+  scroll-behavior: smooth;
+}
+
+div.feed div.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+div.feed div.card-body {
+  padding: 0.75rem 1rem;
+}
+
+div.card-header {
+  background-color: transparent;
+}

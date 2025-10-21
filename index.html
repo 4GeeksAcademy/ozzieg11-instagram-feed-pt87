@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -10,136 +17,224 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
-    />
+    ></script>
     <title>Instagram Photo Feed</title>
   </head>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="fa-brands fa-instagram me-1"></i>
+          <strong>Instagram</strong>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
             >
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Accessibility</a></li>
-              <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
+              Create a new post
+            </button>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Create a new post
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <label for="caption" class="form-label">Caption:</label>
+                    <textarea
+                      class="form-control mb-3"
+                      id="caption"
+                      rows="3"
+                      placeholder="Write a caption..."
+                    ></textarea>
+
+                    <div class="d-flex gap-3">
+                      <button
+                        class="btn btn-outline-light"
+                        type="button"
+                        title="Add Photo"
+                      >
+                        <i class="fa-solid fa-camera"></i>
+                      </button>
+                      <button
+                        class="btn btn-outline-light"
+                        type="button"
+                        title="Add Location"
+                      >
+                        <i class="fa-solid fa-location-dot"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-success">
+                      Publish
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-gear me-1"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-4">
+      <div class="feed">
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex justify-content-between align-items-center"
+          >
+            <h5 class="mb-0">A-10 Thunderbolt II</h5>
+            <small class="text-muted">10/20/25</small>
+          </div>
+          <img
+            src="/static/A10.jpg"
+            class="card-img-top"
+            alt="A-10 Thunderbolt II"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+          <div class="card-body">
+            <h5 class="card-title">8352 Likes</h5>
+            <p class="card-text">An A-10 flying over an airfield.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex justify-content-between align-items-center"
+          >
+            <h5 class="mb-0">F-22 Raptor</h5>
+            <small class="text-muted">10/17/25</small>
+          </div>
+          <img src="/static/F22.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">2754 Likes</h5>
+            <p class="card-text">An F-22 flying above the clouds.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex justify-content-between align-items-center"
+          >
+            <h5 class="mb-0">Doug the dog</h5>
+            <small class="text-muted">10/14/25</small>
+          </div>
+          <img src="/static/doug.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">3647346 Likes</h5>
+            <p class="card-text">Doug the dog from the movie Up.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex justify-content-between align-items-center"
+          >
+            <h5 class="mb-0">Nicolas Cage</h5>
+            <small class="text-muted">10/12/25</small>
+          </div>
+          <img src="/static/nic cage.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">4583 Likes</h5>
+            <p class="card-text">A painting of Nicolas Cage.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex justify-content-between align-items-center"
+          >
+            <h5 class="mb-0">The Old Man</h5>
+            <small class="text-muted">10/5/25</small>
+          </div>
+          <img src="/static/old man.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">238570 Likes</h5>
+            <p class="card-text">The Old Man from the show Pawnstars.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex justify-content-between align-items-center"
+          >
+            <h5 class="mb-0">Nicolas Cage candle</h5>
+            <small class="text-muted">10/1/25</small>
+          </div>
+          <img src="/static/saint cage.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">9324 Likes</h5>
+            <p class="card-text">Artwork on a candle feauring Nicolas Cage.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  <div class="card" style="width: 18rem">
-    <img src="/static/A10.jpg" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem">
-    <img src="/static/F22.jpg" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem">
-    <img src="/static/doug.png" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem">
-    <img src="/static/nic cage.png" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem">
-    <img src="/static/old man.png" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem">
-    <img src="/static/saint cage.png" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <body></body>
+  </body>
 </html>
